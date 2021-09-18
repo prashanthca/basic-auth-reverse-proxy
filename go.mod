@@ -1,4 +1,4 @@
-module github.com/prashanthca/basic-auth-go
+module github.com/prashanthca/basic-auth-reverse-proxy
 
 go 1.16
 

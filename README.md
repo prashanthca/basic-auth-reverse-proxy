@@ -1,8 +1,8 @@
-### Basic Auth GO
+### Reverse Proxy w/ Basic Auth
 
 Usage:
 ```
-basicauthgo [OPTIONS]
+ba-reverseproxy [OPTIONS]
 
 Application Options:
   -a, --addr=             Proxy server address
