@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http/httputil"
 	"github.com/gorilla/mux"
 	"github.com/prashanthca/basic-auth-reverse-proxy/strategies"
