@@ -21,17 +21,16 @@ func main(){
 	if err != nil {
 		return
 	}
-	rp := httputil.ReverseProxy{
+	rp := httputil.ReverseProxy {
 		Director: NewDirector(),
 	}
 	fmt.Printf("Address: %v\nTarget: %v\n", opts.Address, opts.Scheme+"://"+opts.Host)
-	
 	r, err := NewRouter(&rp)
 	if err != nil {	
 		fmt.Println("ERROR:", err)
 		return
 	}
-	srv := http.Server{
+	srv := http.Server {
 		Handler: r,
 		Addr: opts.Address,
 	}

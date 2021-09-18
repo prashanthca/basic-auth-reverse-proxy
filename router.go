@@ -18,10 +18,7 @@ func NewRouter(rp *httputil.ReverseProxy) (*mux.Router, error){
 		r.PathPrefix("/").HandlerFunc(strategies.FwdOptionsReq(rp)).Methods("OPTIONS")
 		r.PathPrefix("/").HandlerFunc(deta.RequestHandler(rp))
 	} else {
-		r.PathPrefix("/").HandlerFunc(strategies.FwdOptionsReq(rp)).Methods("OPTIONS")
-		r.PathPrefix("/").HandlerFunc(strategies.DefaultUnauthorized(rp))
-		return r, errors.New("Invalid strategy")
+		return nil, errors.New("Invalid strategy")
 	}
-	fmt.Println("Routes Registered")
 	return r,nil
 }
