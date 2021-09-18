@@ -3,8 +3,6 @@ package strategies
 import (
 	"net/http"
 	"net/http/httputil"
-	"encoding/base64"
-	"strings"
 )
 
 type Strategy interface {
