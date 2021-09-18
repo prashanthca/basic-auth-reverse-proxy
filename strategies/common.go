@@ -31,14 +31,3 @@ func DefaultUnauthorized(rp *httputil.ReverseProxy) func(http.ResponseWriter, *h
 		httpError(w, 403, "Unauthorized\n")
 	}
 }
-
-func parseToken(req *http.Request) (string, string, error) {
-	authHeader := req.Header.Get("Authorization")
-	token := authHeader[len("Basic "):]
-	data, err := base64.StdEncoding.DecodeString(token)
-	if err != nil {
-		return "","",err
-	}
-	splitToken := strings.Split(string(data), ":")
-	return splitToken[0],splitToken[1],nil
-}
