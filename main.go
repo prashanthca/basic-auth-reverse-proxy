@@ -9,7 +9,7 @@ import (
 
 var opts struct {
 	Address string `short:"a" long:"addr" description:"Proxy server address" required:"true"`
-	Deta bool `long:"deta" description:"Deta auth strategy"`
+	Deta bool `long:"deta" description:"Enable Deta (deta.sh) auth strategy"`
 	DetaProjectKey string `long:"deta-project-key" description:"Deta project key"`
 	DetaBaseId string `long:"deta-base-id" description:"Deta base"`
 	Scheme string `short:"p" long:"scheme" description:"Proxy target scheme" required:"true"`
