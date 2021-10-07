@@ -2,7 +2,7 @@
 
 Usage:
 ```
-ba-reverseproxy [OPTIONS]
+barproxy [OPTIONS]
 
 Application Options:
   -a, --addr=             Proxy server address

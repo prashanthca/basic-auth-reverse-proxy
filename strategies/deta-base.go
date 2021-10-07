@@ -44,7 +44,7 @@ func (x Deta) RequestHandler(rp *httputil.ReverseProxy) func(http.ResponseWriter
 			Limit: 1,
 			Dest: &results,
 		})
-		if err != nil {
+		if err != nil || len(results) == 0 {
 			httpError(w, http.StatusForbidden, fmt.Sprintf("Failed to get item: %s\n", err))
 			return
 		}
