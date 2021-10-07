@@ -44,8 +44,12 @@ func (x Deta) RequestHandler(rp *httputil.ReverseProxy) func(http.ResponseWriter
 			Limit: 1,
 			Dest: &results,
 		})
-		if err != nil || len(results) == 0 {
+		if err != nil {
 			httpError(w, http.StatusForbidden, fmt.Sprintf("Failed to get item: %s\n", err))
+			return
+		}
+		if len(results) == 0 {
+			httpError(w, http.StatusForbidden, fmt.Sprintf("Unknown user\n"))
 			return
 		}
 		if pass != results[0].Password {
